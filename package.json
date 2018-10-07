@@ -1,0 +1,56 @@
+{
+  "name": "react-ellipsis",
+  "version": "0.0.1",
+  "description": "React Component for Ellipsis",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest --config .jest.js",
+    "dist": "NODE_ENV=production webpack --config ./webpack.config.js --progress"
+  },
+  "keywords": [
+    "react",
+    "ellipsis",
+    "typescript"
+  ],
+  "author": "Nelayah",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.9.4",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "@types/webpack-env": "^1.13.6",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "cz-conventional-changelog": "^2.1.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^23.5.0",
+    "jest-enzyme": "^6.0.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "standard-version": "^4.4.0",
+    "ts-jest": "^23.1.4",
+    "ts-loader": "^5.0.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

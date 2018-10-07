@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "target": "es6",
+    "declarationDir": "./lib",
+    "outDir": "./jsx",
+    "lib": [
+      "dom",
+      "es7"
+    ]
+  },
+  "include": [
+    "src/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "jsx"
+  ]
+}
