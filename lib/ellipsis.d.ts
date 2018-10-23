@@ -10,8 +10,9 @@ export default class  extends React.Component<EllipsisProps, EllipsisState> {
     ellipsisNode: HTMLDivElement;
     targetHeight: number;
     componentDidMount(): void;
+    readonly ellipsisNodeCurrentHeight: number;
     handleBisection: (start: number, end: number) => void;
     handleEllipsisNode: (node: HTMLDivElement) => void;
-    handleTextRender: () => {};
+    handleTextRender: () => JSX.Element;
     render(): {};
 }

@@ -23,7 +23,7 @@ export default class default_1 extends React.Component {
             const index = Math.floor((start + end) / 2);
             const str = children.substring(0, index);
             this.ellipsisNode.innerText = str + suffix;
-            const currentHeight = this.ellipsisNode.offsetHeight;
+            const currentHeight = this.ellipsisNodeCurrentHeight;
             if (currentHeight < this.targetHeight)
                 this.handleBisection(index + 1, end);
             if (currentHeight > this.targetHeight)
@@ -44,10 +44,10 @@ export default class default_1 extends React.Component {
             this.ellipsisNode = node;
         };
         this.handleTextRender = () => {
-            const _a = this.props, { style, children, custom } = _a, restProps = __rest(_a, ["style", "children", "custom"]);
+            const _a = this.props, { children } = _a, restProps = __rest(_a, ["children"]);
             if (typeof children !== 'string')
-                return children;
-            return (<div ref={this.handleEllipsisNode} style={style} {...restProps}>
+                return null;
+            return (<div id="_react_ellipsis" ref={this.handleEllipsisNode} {...restProps}>
         {children}
       </div>);
         };
@@ -57,15 +57,18 @@ export default class default_1 extends React.Component {
         if (typeof children !== 'string')
             return;
         const lineHeight = parseInt(getComputedStyle(this.ellipsisNode, null).lineHeight || '10', 10);
-        const currentHegiht = this.ellipsisNode.offsetHeight;
+        const currentHeight = this.ellipsisNodeCurrentHeight;
         this.targetHeight = lines * lineHeight;
-        const isEllipsis = currentHegiht > this.targetHeight;
+        const isEllipsis = currentHeight > this.targetHeight;
         if (isEllipsis)
             this.handleBisection(0, children.length - 1);
         this.setState({
             isEllipsis,
             ellipsisText: this.ellipsisNode.innerText
         });
+    }
+    get ellipsisNodeCurrentHeight() {
+        return this.ellipsisNode.offsetHeight || this.ellipsisNode.getBoundingClientRect().height;
     }
     render() {
         const { ellipsisText, isEllipsis } = this.state;

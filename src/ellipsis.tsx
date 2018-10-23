@@ -20,14 +20,17 @@ export default class extends React.Component<EllipsisProps, EllipsisState> {
     } = this.props;
     if (typeof children !== 'string') return;
     const lineHeight = parseInt(getComputedStyle(this.ellipsisNode, null).lineHeight || '10', 10);
-    const currentHegiht = this.ellipsisNode.offsetHeight;
+    const currentHeight = this.ellipsisNodeCurrentHeight;
     this.targetHeight = lines * lineHeight;
-    const isEllipsis = currentHegiht > this.targetHeight;
+    const isEllipsis = currentHeight > this.targetHeight;
     if (isEllipsis) this.handleBisection(0, children.length - 1);
     this.setState({
       isEllipsis,
       ellipsisText: this.ellipsisNode.innerText
     });
+  }
+  get ellipsisNodeCurrentHeight() {
+    return this.ellipsisNode.offsetHeight || this.ellipsisNode.getBoundingClientRect().height;
   }
   handleBisection = (start: number, end: number) => {
     const {
@@ -38,7 +41,7 @@ export default class extends React.Component<EllipsisProps, EllipsisState> {
     const index = Math.floor((start + end) / 2);
     const str = children.substring(0, index);
     this.ellipsisNode.innerText = str + suffix;
-    const currentHeight = this.ellipsisNode.offsetHeight;
+    const currentHeight = this.ellipsisNodeCurrentHeight;
     if (currentHeight < this.targetHeight) this.handleBisection(index + 1, end);
     if (currentHeight > this.targetHeight) this.handleBisection(start, index - 1);
     if (currentHeight === this.targetHeight && index < end) {
@@ -55,19 +58,10 @@ export default class extends React.Component<EllipsisProps, EllipsisState> {
     this.ellipsisNode = node;
   }
   handleTextRender = () => {
-    const {
-      style,
-      children,
-      custom,
-      ...restProps
-    } = this.props;
-    if (typeof children !== 'string') return children;
+    const { children, ...restProps } = this.props;
+    if (typeof children !== 'string') return null;
     return (
-      <div
-        ref={this.handleEllipsisNode}
-        style={style}
-        {...restProps}
-      >
+      <div id="_react_ellipsis" ref={this.handleEllipsisNode} {...restProps}>
         {children}
       </div>
     );
