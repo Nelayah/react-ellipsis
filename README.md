@@ -102,7 +102,7 @@ It render:
 ```
 
 ## Props
-<div style="width: 150px;">Property</div> | Type | Default| Description
+Property | Type | Default| Description
 -|-|-|-
 lines | number | 1 | Submitting a number controls the number of lines that should be displayed.
 suffix | string | '...' | 	The suffix string for the text.
