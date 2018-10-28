@@ -1,0 +1,12 @@
+__tests__
+jsx
+node_modules
+src
+.gitignore
+.jest
+.tslintignore
+index.js
+setup.js
+tsconfig.json
+tsconfig.test.json
+webpack.config.js
