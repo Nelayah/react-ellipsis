@@ -61,10 +61,10 @@ export default class extends React.Component<EllipsisProps, EllipsisState> {
     this.ellipsisNode = node;
   }
   handleTextRender = () => {
-    const { children, ...restProps } = this.props;
+    const { children, style } = this.props;
     if (typeof children !== 'string') return null;
     return (
-      <div id="_react_ellipsis" ref={this.handleEllipsisNode} {...restProps}>
+      <div id="_react_ellipsis" ref={this.handleEllipsisNode} style={style}>
         {children}
       </div>
     );
