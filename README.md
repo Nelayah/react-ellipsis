@@ -9,7 +9,7 @@ React Ellipsis is a [React](http://facebook.github.io/react/) component that let
 
 ## Installation
 ```bash
-npm i --save-dev react-ellipsis
+npm i --save-dev react-ellipsis-pjs
 ```
 
 
