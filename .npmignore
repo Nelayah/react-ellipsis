@@ -3,7 +3,8 @@ jsx
 node_modules
 src
 .gitignore
-.jest
+.jest.js
+CHANGELOG.md
 .tslintignore
 index.js
 setup.js

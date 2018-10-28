@@ -4,7 +4,10 @@ import {EllipsisProps, EllipsisState} from './interface';
 export default class extends React.Component<EllipsisProps, EllipsisState> {
   static defaultProps: EllipsisProps = {
     lines: 1,
-    style: {wordBreak: 'break-all'},
+    style: {
+      wordBreak: 'break-all',
+      whiteSpace: 'pre-wrap'
+    },
     suffix: '...'
   };
   state = {

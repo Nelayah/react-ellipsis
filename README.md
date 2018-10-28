@@ -18,7 +18,7 @@ npm i --save-dev react-ellipsis-pjs
 ### Example01:
 ```jsx
 import React from 'react';
-import Ellipsis from 'react-ellipsis';
+import Ellipsis from 'react-ellipsis-pjs';
 
 class MyComponent extends React.Component {
   render() {
@@ -48,7 +48,7 @@ Apple...
 ### Example02:
 ```jsx
 import React from 'react';
-import Ellipsis from 'react-ellipsis';
+import Ellipsis from 'react-ellipsis-pjs';
 
 class MyComponent extends React.Component {
   render() {
@@ -59,7 +59,7 @@ class MyComponent extends React.Component {
       custom: (ellipsisText, isEllipsis) => {
         if (!isEllipsis) return ellipsisText;
         return (
-          <div title={value}>{ellipsisText}</div>
+          <div title={value} style={{whiteSpace: 'pre-wrap'}}>{ellipsisText}</div>
         );
       }
     };
@@ -106,5 +106,5 @@ Property | Type | Default| Description
 -|-|-|-
 lines | number | 1 | Submitting a number controls the number of lines that should be displayed.
 suffix | string | '...' | 	The suffix string for the text.
-style | React.CSSProperties | {wordBreak: 'break-all'} | Submitting React CSSProperties that will overwrite the default one.
+style | React.CSSProperties | {wordBreak: 'break-all', whiteSpace: 'pre-wrap'} | Submitting React CSSProperties that will overwrite the default one.
 custom | (ellipsisText: React.ReactNode \| string, isEllipsis: boolean) => React.ReactNode | undefined | The function will return a ReactNode that overwrites the default one.

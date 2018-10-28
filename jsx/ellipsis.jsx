@@ -80,6 +80,9 @@ export default class default_1 extends React.Component {
 }
 default_1.defaultProps = {
     lines: 1,
-    style: { wordBreak: 'break-all' },
+    style: {
+        wordBreak: 'break-all',
+        whiteSpace: 'pre-wrap'
+    },
     suffix: '...'
 };
