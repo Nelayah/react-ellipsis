@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest --config .jest.js",
-    "dist": "NODE_ENV=production webpack --config ./webpack.config.js --progress"
+    "dist": "NODE_ENV=production webpack --config ./webpack.config.js --progress",
+    "version": "standard-version -- --release-as"
   },
   "keywords": [
     "react",
