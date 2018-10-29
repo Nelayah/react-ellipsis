@@ -8,6 +8,10 @@
     "dist": "NODE_ENV=production webpack --config ./webpack.config.js --progress",
     "version": "standard-version -- --release-as"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nelayah/React-Ellipsis"
+  },
   "keywords": [
     "react",
     "ellipsis",
