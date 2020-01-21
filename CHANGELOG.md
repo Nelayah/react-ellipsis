@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.10](https://github.com/Nelayah/React-Ellipsis/compare/v0.0.9...v0.0.10) (2020-01-21)
+
+
+### Features
+
+* support resize observer ([96c1b3c](https://github.com/Nelayah/React-Ellipsis/commit/96c1b3c39d9979fd1450f7e776e9083fe365de4a))
 
 <a name="0.0.9"></a>
 ## [0.0.9](https://github.com/Nelayah/React-Ellipsis/compare/v0.0.8...v0.0.9) (2018-11-22)
