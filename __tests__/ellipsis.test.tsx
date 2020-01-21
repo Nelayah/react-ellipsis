@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import {mount} from 'enzyme';
+import { mount } from 'enzyme';
 import Ellipsis from '../lib';
 
 const text =`The ellipsis is also called a suspension point, points of ellipsis, periods of ellipsis, or (colloquially) "dot-dot-dot".[2]
@@ -14,7 +14,6 @@ Whether an ellipsis at the end of a sentence needs a fourth dot to finish the se
 describe('<Ellipsis />', () => {
   beforeAll(() => {
     jest.useFakeTimers();
-    document.body.innerHTML = '<div id="mounter" />';
   });
 
   afterAll(() => {
@@ -22,8 +21,9 @@ describe('<Ellipsis />', () => {
   });
 
   it('Ellipsis exists', () => {
-    const wrapper = mount(<Ellipsis>{text}</Ellipsis>, { attachTo: document.getElementById('mounter') });
+    const wrapper = mount(<Ellipsis text={text} lines={1} />);
     jest.runAllTimers();
     expect(wrapper.exists()).toBe(true);
+    expect(wrapper.text()).toBe(text);
   });
 })

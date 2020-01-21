@@ -19,8 +19,8 @@
   "author": "Nelayah",
   "license": "MIT",
   "peerDependencies": {
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -41,7 +41,7 @@
     "jest": "^25.0.0",
     "jest-enzyme": "^7.0.0",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.12.0",
     "standard-version": "^7.1.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.0.0",

@@ -1,112 +1,69 @@
-# React Ellipsis 
+# React Ellipsis PJS
 
-React Ellipsis is a [React](http://facebook.github.io/react/) component that lets Cross-browser multiline text ellipsis.
+React Ellipsis PJS is a [React](http://facebook.github.io/react/) component that lets Cross-browser multiline text ellipsis.
 
 [![NPM](https://img.shields.io/npm/v/react-ellipsis-pjs.svg)](https://www.npmjs.com/package/react-ellipsis-pjs)
 
-## Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Props](#props)
-
 ## Installation
+
+react-ellipsis-pjs@2 requires React v16.8.0 or higher with React Hooks support.
+
 ```bash
 npm i --save-dev react-ellipsis-pjs
 ```
 
+The react-ellipsis-pjs@1 using React Class supports React v16.0.0 or higher.
 
-## Usage
+```bash
+npm i --save-dev react-ellipsis-pjs@1.0.0
+```
+The V1 documentation can be found in the [README_v1](README_v1.md)
 
-### Example01:
+## Basic Usage
+
 ```jsx
 import React from 'react';
 import Ellipsis from 'react-ellipsis-pjs';
 
-class MyComponent extends React.Component {
-  render() {
-    const {value} = this.props;
-    return (
-      <Ellipsis lines={1}>
-        {value}
-      </Ellipsis>
-    );
-  }
-}
-```
-#### Render:
+const text = `React makes it painless to create interactive UIs
+Design simple views for each state in your application,
+and React will efficiently update and render just the right`;
 
-If `MyComponent.props.value` :
+<Ellipsis text={text} /> 
 
-```
-Apple
-Banana
-Orange
-```
-It render:
-```
-Apple...
+// Render: React makes it painless to create interactive UIs...
 ```
 
-### Example02:
+## Custom Suffix And Lines
+
 ```jsx
-import React from 'react';
-import Ellipsis from 'react-ellipsis-pjs';
+<Ellipsis text={text} lines={2} suffix=" - For detail..." /> 
 
-class MyComponent extends React.Component {
-  render() {
-    const {value} = this.props;
-    const props = {
-      lines: 2,
-      suffix: '......',
-      custom: (ellipsisText, isEllipsis) => {
-        if (!isEllipsis) return ellipsisText;
-        return (
-          <div title={value} style={{whiteSpace: 'pre-wrap'}}>{ellipsisText}</div>
-        );
-      }
-    };
+// Render: 
+// React makes it painless to create interactive UIs
+// Design simple views for each state in your application, - For detail...
+```
+
+## Custom Text Ellipsis Or Not
+
+```jsx
+import { Tooltip } from 'antd';
+
+<Ellipsis
+  text={text}
+  render={(ellipsisText, isEllipsis) => {
+    if (!isEllipsis) return ellipsisText;
     return (
-      <Ellipsis {...props} >
-        {value}
-      </Ellipsis>
+      <Tooltip title={text}>{ellipsisText}</Tooltip>
     );
-  }
-}
-```
-#### Render:
-
-e.g.1
-
-If `MyComponent.props.value` :
-```
-Apple
-```
-It render:
-```
-Apple
-```
-
-e.g.2
-
-If `MyComponent.props.value` :
-
-```
-Apple
-Banana
-Orange
-```
-It render:
-```
-<div title="Apple\nBanana\nOrange">
-  Apple
-  Banana......
-<div>
+  }}
+/>
 ```
 
 ## Props
 Property | Type | Default| Description
 -|-|-|-
+suffix | string | '...' | When the text ellipsis, the suffix string for the text.
 lines | number | 1 | Submitting a number controls the number of lines that should be displayed.
-suffix | string | '...' | 	The suffix string for the text.
-style | React.CSSProperties | {wordBreak: 'break-all', whiteSpace: 'pre-wrap'} | Submitting React CSSProperties that will overwrite the default one.
-custom | (ellipsisText: React.ReactNode \| string, isEllipsis: boolean) => React.ReactNode | undefined | The function will return a ReactNode that overwrites the default one.
+render | (ellipsisText: string, isEllipsis: boolean) => React.ReactNode | - | The function that returns a ReactNode will overwrite the default one.
+style | React.CSSProperties | - | Change React Ellipsis PJS Componen Style
