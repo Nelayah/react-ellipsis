@@ -1,6 +1,6 @@
 {
   "name": "react-ellipsis-pjs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "React Component for Ellipsis",
   "main": "lib/index.js",
   "scripts": {
