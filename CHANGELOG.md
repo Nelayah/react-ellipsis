@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/Nelayah/React-Ellipsis/compare/v0.0.10...v0.0.11) (2020-01-21)
+
+
+### Bug Fixes
+
+* fix observe trigger problem ([211b92a](https://github.com/Nelayah/React-Ellipsis/commit/211b92ab63cacebfc09aeb60dce78f7b1e058de7))
+
 ### [0.0.10](https://github.com/Nelayah/React-Ellipsis/compare/v0.0.9...v0.0.10) (2020-01-21)
 
 
