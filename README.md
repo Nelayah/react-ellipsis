@@ -2,6 +2,8 @@
 
 React Ellipsis is a [React](http://facebook.github.io/react/) component that lets Cross-browser multiline text ellipsis.
 
+[![NPM](https://img.shields.io/npm/v/react-ellipsis-pjs.svg)](https://www.npmjs.com/package/react-ellipsis-pjs)
+
 ## Contents
 - [Installation](#installation)
 - [Usage](#usage)
