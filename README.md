@@ -61,8 +61,9 @@ import { Tooltip } from 'antd';
 ```
 
 ## Props
-Property | Type | Default| Description
+Property | Type | Default | Description
 -|-|-|-
+text | string | - | Current value
 suffix | string | '...' | When the text ellipsis, the suffix string for the text.
 lines | number | 1 | Submitting a number controls the number of lines that should be displayed.
 render | (ellipsisText: string, isEllipsis: boolean) => React.ReactNode | - | The function that returns a ReactNode will overwrite the default one.
