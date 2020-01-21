@@ -2,20 +2,29 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "declaration": true,
-    "target": "es6",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "skipLibCheck": true,
     "declarationDir": "./lib",
-    "outDir": "./jsx",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./lib",
     "lib": [
+      "scripthost",
       "dom",
-      "es7"
+      "es6",
+      "es7",
+      "esnext"
     ]
   },
   "include": [
-    "src/*"
+    "src/*",
+    "src/example/*",
+    "externals.d.ts"
   ],
   "exclude": [
     "node_modules",
