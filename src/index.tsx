@@ -57,7 +57,6 @@ const Component: React.FC<EllipsisProps> = props => {
   }, [props.lines, props.text]);
 
   if (props.render && ellipsisText) {
-    console.log({ellipsisText, isEllipsis});
     return (
       <div ref={ellipsisNodeRef} style={props.style}>
         {props.render(ellipsisText, isEllipsis)}
