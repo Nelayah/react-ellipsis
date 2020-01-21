@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/Nelayah/React-Ellipsis/compare/v0.0.11...v2.1.0) (2020-01-21)
+
+
+### Features
+
+* Use React Hooks to refactor ([3b06847](https://github.com/Nelayah/React-Ellipsis/commit/3b06847313c1c64f73cd3c5466378ed460ed9ac2))
+
 ### [0.0.11](https://github.com/Nelayah/React-Ellipsis/compare/v0.0.10...v0.0.11) (2020-01-21)
 
 
