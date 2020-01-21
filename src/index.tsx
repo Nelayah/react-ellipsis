@@ -34,10 +34,10 @@ export default class extends React.Component<EllipsisProps, EllipsisState> {
       this.targetHeight = lines * lineHeight;
       const isEllipsis = currentHeight > this.targetHeight;
       if (isEllipsis) this.handleBisection(0, children.length - 1);
-      this.setState({
-        isEllipsis,
-        ellipsisText: this.ellipsisNode.innerText
-      });
+      const nextState: any = {};
+      if (this.ellipsisNode.innerText !== this.state.ellipsisText) nextState.ellipsisText = this.ellipsisNode.innerText;
+      if (!this.state.isEllipsis && isEllipsis) nextState.isEllipsis = isEllipsis;
+      this.setState(nextState);
     });
     ro.observe(this.ellipsisNode.parentNode);
   }
